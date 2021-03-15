@@ -20,8 +20,6 @@ public class BezierCurve extends JFrame implements MouseListener, MouseMotionLis
 	
 	private int dragIndex = -1;
 	
-	private BezierPanel drawPanel;
-	
 	class BezierPanel extends JPanel {
 		@Override
 		public void paintComponent(Graphics g) {
@@ -47,7 +45,7 @@ public class BezierCurve extends JFrame implements MouseListener, MouseMotionLis
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("베지어 커브 데모");
 		
-		drawPanel = new BezierPanel();
+		JPanel drawPanel = new BezierPanel();
 		drawPanel.addMouseListener(this);
 		drawPanel.addMouseMotionListener(this);
 		add(drawPanel, BorderLayout.CENTER);

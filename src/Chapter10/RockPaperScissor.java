@@ -29,7 +29,7 @@ public class RockPaperScissor extends JFrame implements ActionListener{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(0, 3));
+		panel.setLayout(new GridLayout(1, 3));
 		
 		information = new JTextField("아래의 버튼 중에서 하나를 클릭하시오!");
 		output = new JTextField(20);

@@ -2,9 +2,12 @@ package Chapter10;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,13 +18,23 @@ public class KeyEventTest extends JFrame implements KeyListener {
 	private JPanel panel;
 	private JTextField field;
 	private JTextArea area;
+	private JButton button;
 	
 	public KeyEventTest() {
-		panel = new JPanel(new GridLayout(0, 2));
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		panel = new JPanel(new GridLayout(0, 3));
 		panel.add(new JLabel("문자를 입력하시오: "));
 		
-		field = new JTextField(10);
+		field = new JTextField(5);
 		panel.add(field);
+		
+		button = new JButton("초기화");
+		button.addActionListener(e -> {
+			area.setText("");
+		});
+		panel.add(button);
 		
 		area = new JTextArea(3, 30);
 		
@@ -60,4 +73,6 @@ public class KeyEventTest extends JFrame implements KeyListener {
 		
 		area.append(" " + s + "문자 " + c + "(코드: " + keyCode + ") " + modifiers + "\n");
 	}
+	
+	
 }

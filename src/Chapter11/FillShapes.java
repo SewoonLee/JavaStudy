@@ -7,11 +7,7 @@ import java.util.ArrayList;
 
 class GradientPanel extends JPanel{
     
-    ArrayList<Shape> shapeArray = new ArrayList<>();
-
-    public GradientPanel(){
-        Shape s;
-    }
+    
     
     public void paintComponent(Graphics g){
         Graphics2D g2=(Graphics2D) g;
